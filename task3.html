@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task 3</title>
+</head>
+<body>
+	<script type="text/javascript">
+  
+function divisibility(num){
+	let result = [];
+
+	for(i=1; i<num+ 1; i++){
+		let divisibleBy2 = false;
+		let divisibleBy3 = false;
+		let tempResult=i;
+
+		if (i % 2 === 0){
+			divisibleBy2 = true;
+			tempResult = "yu";
+			}
+		if (i % 3 === 0){
+				divisibleBy3 = true;
+				if(divisibleBy2){
+					tempResult = tempResult + "-gi"
+				}else {
+					tempResult = "gi"
+				}
+			}
+		if (i % 5 === 0){
+				if(divisibleBy2 || divisibleBy3){
+					tempResult = tempResult + "-oh"
+				}
+				else{
+					tempResult = "oh"
+				}
+
+			}
+			result.push(tempResult);
+	}
+	console.log(result)
+}
+
+divisibility(100);
+
+		
+	</script>
+</body>
+</html>
